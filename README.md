@@ -41,7 +41,8 @@ Base Url : localhost:3000/api
     }
   
   #### Response 
-  ```{
+  ```
+  {
     "status": true,
     "statusCode": 200,
     "message": "Your data added successfully",
@@ -53,17 +54,20 @@ Base Url : localhost:3000/api
         "profileImage": "https://www.google.com/images",
         "isAdmin": false
     }
-} ```
+}
+ ```
 #### Login  -> {{url}}/login
 #### Method -> Post
 #### Body 
 
-``` {
+``` 
+{
     "emailId":"vktrenga@gmail.com",
     "password": "rArjun@26"
-}```
+}
+```
 #### Response 
-
+``` 
 {
     "status": true,
     "statusCode": 200,
@@ -72,6 +76,7 @@ Base Url : localhost:3000/api
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJhZGMyMzVjMjgwN2FjY2Y4N2I3ZWYiLCJlbWFpbElkIjoidmt0cmVuZ2FAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTYzOTg1MjY4NSwiZXhwIjoxNjM5ODY3MDg1fQ.J_UUETIF5ztgL8yDt41uqGtrSA5f6hHbRgfUF77hr3w"
     }
 }
+```
 #### Create User -> {{url}}/user/
  We can create a new user, with login credetials using this endpoint, By this we can create multiple user
 #### Method -> Post
