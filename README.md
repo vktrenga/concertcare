@@ -41,7 +41,7 @@ Base Url : localhost:3000/api
     }
   
   #### Response 
-  {
+  ```{
     "status": true,
     "statusCode": 200,
     "message": "Your data added successfully",
@@ -53,7 +53,7 @@ Base Url : localhost:3000/api
         "profileImage": "https://www.google.com/images",
         "isAdmin": false
     }
-}
+}```
 #### Login  -> {{url}}/login
 #### Method -> Post
 #### Body 
