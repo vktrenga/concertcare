@@ -53,15 +53,15 @@ Base Url : localhost:3000/api
         "profileImage": "https://www.google.com/images",
         "isAdmin": false
     }
-}```
+} ```
 #### Login  -> {{url}}/login
 #### Method -> Post
 #### Body 
 
-{
+``` {
     "emailId":"vktrenga@gmail.com",
     "password": "rArjun@26"
-}
+}```
 #### Response 
 
 {
