@@ -26,7 +26,7 @@ npm run test
 ### End Points  (https://www.getpostman.com/collections/925d121ffe9a9275abdc)
 Base Url : localhost:3000/api
 
-### Inital User
+### Initial User
   We can create a new Inital user, without login credetials using this endpoint, By this we can create only the first user
    #### Url: /user/initial-user
    #### Method: Post
