@@ -64,11 +64,13 @@ export class UserService {
       const limitCount: number = queryFilter.limit
         ? queryFilter.limit
         : parseInt(process.env.LIMIT);
-      const sortBy = queryFilter.sort_by ? queryFilter.sort_by.toString() : "_id";
+      const sortBy = queryFilter.sort_by
+        ? queryFilter.sort_by.toString()
+        : "_id";
       const sortOrder = queryFilter.sort === "asc" ? 1 : -1;
-      const sorting = { 
-        [sortBy] : sortOrder 
-      }
+      const sorting = {
+        [sortBy]: sortOrder,
+      };
 
       const currentPage: number | string = queryFilter.page
         ? queryFilter.page
@@ -144,9 +146,16 @@ export class UserService {
       userData.salt = salt;
       // Create User
       const user: IUser = await this.userModel.create(userData);
+
+      const userCreatedData: IUser = await this.userModel.findById(user._id, {
+        password: 0,
+        __v: 0,
+        salt: 0,
+      });
+
       // Get User Response
       const result: APIResponseData = APIResponse.success(
-        user,
+        userCreatedData,
         APIMessages.successErrorMessage.addedSuccessfully,
         200
       );
@@ -176,10 +185,14 @@ export class UserService {
       });
       if (userAlreadyExist && userAlreadyExist["_id"].toString() !== id)
         throw new Error(APIMessages.successErrorMessage.dataAlreadyExist);
-      const userUpdateData: IUser = await this.userModel.findByIdAndUpdate(
-        id,
-        userData
-      );
+      
+        await this.userModel.findByIdAndUpdate(id, userData);
+
+      const userUpdateData: IUser = await this.userModel.findById(id, {
+        password: 0,
+        __v: 0,
+        salt: 0,
+      });
       const result: APIResponseData = APIResponse.success(
         userUpdateData,
         APIMessages.successErrorMessage.updatedSuccessfully,
@@ -202,8 +215,7 @@ export class UserService {
   async deleteUser(req, res): Promise<APIResponseData> {
     try {
       const { id } = req.params;
-      const deteleDetails = await this.userModel.findByIdAndRemove(id);
-      console.log(deteleDetails);
+      await this.userModel.findByIdAndRemove(id);
       const result: APIResponseData = APIResponse.success(
         [],
         APIMessages.successErrorMessage.deletedSuccessfully,
