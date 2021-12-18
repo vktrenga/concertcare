@@ -81,6 +81,7 @@ Base Url : localhost:3000/api
  We can create a new user, with login credetials using this endpoint, By this we can create multiple user
 #### Method -> Post
 #### Body 
+```
 {
     "name": "Arjun",
     "emailId":"arj13@gmail.com",
@@ -88,8 +89,10 @@ Base Url : localhost:3000/api
     "phoneNo":"+918015838576",
     "profileImage":"https://test/test.png"
 }
+```
 #### Response 
 
+```
 {
     "status": true,
     "statusCode": 200,
@@ -103,7 +106,7 @@ Base Url : localhost:3000/api
         "_id": "61be2a9ae8b8052f10b15097"
     }
 }
-
+```
 
 #### Update User -> {{url}}/user/:id
  We can update a old user, with login credetials.
@@ -111,6 +114,7 @@ Base Url : localhost:3000/api
 #### Method -> Put
 
 #### Body 
+```
 {
     "name": "Arjun Edited",
     "phoneNo": "+918015838576",
@@ -118,8 +122,10 @@ Base Url : localhost:3000/api
     "phoneNo":"+918015838576",
     "profileImage":"https://test/test.png"
 }
+```
 #### Response 
 
+```
 {
     "status": true,
     "statusCode": 200,
@@ -133,13 +139,13 @@ Base Url : localhost:3000/api
         "_id": "61be2a9ae8b8052f10b15097"
     }
 }
-
+```
 
 #### Get User -> {{url}}/user/:id
 We can get a  user, with login credetials.
 #### Method -> Get
 #### Response 
-
+```
 {
     "status": true,
     "statusCode": 200,
@@ -153,27 +159,27 @@ We can get a  user, with login credetials.
         "_id": "61be2a9ae8b8052f10b15097"
     }
 }
-
+```
 #### Delete User -> {{url}}/user/:id
 We can delete a  user, with login credetials.
 
 #### Method -> Delete
 #### Response 
-
+```
 {
     "status": true,
     "statusCode": 200,
     "message": "Your data deleted successfully",
     "data": []
 }
-
+```
 
 #### Get User -> {{url}}/user/:id
 We can get a user, with login credetials .
 
 #### Method -> Get
 #### Response 
-
+```
 {
     "status": true,
     "statusCode": 200,
@@ -187,7 +193,7 @@ We can get a user, with login credetials .
         "_id": "61be2a9ae8b8052f10b15097"
     }
 }
-
+```
 #### List User -> {{url}}/user/
 We can get all user, with login credetials and user params like limit,page,search, sort and sort by
 
@@ -195,7 +201,7 @@ We can get all user, with login credetials and user params like limit,page,searc
 #### Query Params  
 ?page=1&limit=10&search=&sort=asc&sort_by=name
 #### Response 
-
+```
 {
     "status": true,
     "statusCode": 200,
@@ -225,4 +231,5 @@ We can get all user, with login credetials and user params like limit,page,searc
         "totalPages": 1
     }
 }
+```
 
