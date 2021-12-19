@@ -137,7 +137,7 @@ Base Url : localhost:3000/api
 {
     "status": true,
     "statusCode": 200,
-    "message": "Your data added successfully",
+    "message": "Your data updated successfully",
     "data": {
         "name": "Arjun Edited",
         "phoneNo": "+918015838576",
@@ -157,7 +157,7 @@ We can get a  user, with login credetials.
 {
     "status": true,
     "statusCode": 200,
-    "message": "Your data added successfully",
+    "message": "Details",
     "data": {
         "name": "Arjun Edited",
         "phoneNo": "+918015838576",
@@ -180,28 +180,7 @@ We can delete a  user, with login credetials.
     "message": "Your data deleted successfully",
     "data": []
 }
-```
 
-#### Get User -> {{url}}/user/:id
-We can get a user, with login credetials .
-
-#### Method -> Get
-#### Response 
-```
-{
-    "status": true,
-    "statusCode": 200,
-    "message": "Your data added successfully",
-    "data": {
-        "name": "Arjun Edited",
-        "phoneNo": "+918015838576",
-        "emailId": "arj@gmail.com",
-        "profileImage": https://test/test.png",
-        "isAdmin": false,
-        "_id": "61be2a9ae8b8052f10b15097"
-    }
-}
-```
 #### List User -> {{url}}/user/
 We can get all user, with login credetials and user params like limit,page,search, sort and sort by
 
