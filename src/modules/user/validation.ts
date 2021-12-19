@@ -9,7 +9,11 @@ export class UserValidation {
         .withMessage("Email Id is required")
         .isEmail()
         .withMessage("Email Id not valid"),
-      check("phoneNo").notEmpty().withMessage("Phone No is required"),
+      check("phoneNo").notEmpty().withMessage("Phone No is required")
+      .escape()
+      .exists({checkFalsy: true})
+      .isLength({min: 10, max:13})
+      .matches(/^((0091)|(\+91)|0?)[789]{1}\d{9}$/).withMessage("Phone No is Invalid"),
       check("password")
         .notEmpty()
         .withMessage("password is required")
@@ -17,7 +21,7 @@ export class UserValidation {
         .withMessage("password must be 8 characters")
     ];
   };
-  
+
   static updateValidation = () => {
     return [
       check("name").notEmpty().withMessage("name is required"),
