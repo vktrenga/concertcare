@@ -98,7 +98,7 @@ export class UserService {
       const users: IUser[] = await this.userModel
         .find(query, { password: 0, __v: 0, salt: 0 })
         .sort(sorting)
-        .skip(currentPage)
+        .skip(Number(currentPage - 1) * Number(limitCount))
         .limit(Number(limitCount));
 
       const pagination: Pagination = {
