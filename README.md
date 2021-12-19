@@ -4,16 +4,24 @@
 #### Clone
 git clone https://github.com/vktrenga/concertcare.git
 #### Edit and Rename 
-
-.sample.env file and rename as .env
+ You shuold add / modify the db connection on **.sample.env** and rename that file as **.env**
+ 
 #### install all packages
+```
 npm install
 
+```
 #### run Project
+```
 npm run serve
 
+```
+
 ### run Unit test
+```
 npm run test
+
+```
 
 
 #### Technologies
