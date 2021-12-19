@@ -35,6 +35,14 @@ export class UserController {
 
   async updateUserDetails(req, res) {
     try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        const result: APIResponseData = APIResponse.error(
+          errors["errors"],
+          402
+        );
+        return res.status(402).json(result);
+      }
       await userService.updateUser(req, res);
     } catch (err) {
       const result: APIResponseData = APIResponse.error(err.message, 500);

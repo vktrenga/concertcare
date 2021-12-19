@@ -30,7 +30,7 @@ router.post(
 router.put(
   "/user/:id",
   AuthController.authenticate,
-  UserValidation.signUpValidation(),
+  UserValidation.updateValidation(),
   userController.updateUserDetails
 );
 
