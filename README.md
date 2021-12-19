@@ -180,7 +180,7 @@ We can delete a  user, with login credetials.
     "message": "Your data deleted successfully",
     "data": []
 }
-
+```
 #### List User -> {{url}}/user/
 We can get all user, with login credetials and user params like limit,page,search, sort and sort by
 
